@@ -18,6 +18,10 @@
                 min-height: 90vh;
             }
 
+            .bg-odd{
+                background-color: chocolate;
+            }
+
             a{
                 text-decoration: none;
             }
@@ -48,16 +52,37 @@
                 display: inline-block;
                 border-radius: 50%;
             }
+
+            /*about section*/
+
+            .about-vid-container{
+                height: 350px;
+                width: 300px;
+                position: relative;
+                overflow: hidden;
+                transform: skew(-5deg);
+            }
+
+            .about-vid-container video{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%; /* Fill the container */
+                height: 100%; /* Fill the container */
+                object-fit: cover; /* Maintain aspect ratio and cover the area */
+            }
         </style>
     </head>
 
     <!--
         main-home-content
+        about-data-container
+        about-vid-container
     -->
 
     <body>
 
-        <nav class="navbar navbar-expand-lg fixed-top nav-css">
+        <nav class="navbar navbar-expand-lg fixed-top bg-light nav-css">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="#">Aventador</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -103,7 +128,30 @@
                 </div>
             </div>
         </section>
-        <section class="" id="about"></section>
+
+        <section class="d-flex align-items-center bg-odd py-5" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mb-3 mb-lg-0">
+                        <div class="about-data-container text-center text-lg-start">
+                            <p class="fw-bold display-3 text-light">DESIGNED TO <br><span class="text-dark">GO BEYOND</span><br>PERFORMANCE</p>
+                            <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem illo vel quia dolor, nisi neque perferendis quasi rem ut sunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, inventore?
+                            </p>
+                            <button type="button" class="btn btn-outline-light rounded-0 px-4 py-2">Details ></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-center">
+                        <div class="about-vid-container shadow-lg">
+                            <video autoplay loop muted class="about-video">
+                                <source src="assets/img/about-vid.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section class="" id="models"></section>
         <section class="" id="information"></section>
         <section class="" id="contact"></section>
